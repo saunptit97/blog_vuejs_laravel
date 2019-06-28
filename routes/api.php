@@ -20,4 +20,5 @@ Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], funct
     Route::resource('categories', 'CategoryController', ['except' => ['create', 'edit']]);
     Route::resource('account', 'AccountController', ['except' => ['create', 'edit']]);
     Route::resource('users', 'UserController', ['except' => ['create', 'edit']]);
+    Route::resource('posts', 'PostController', ['except' => ['create', 'edit']]);
 });

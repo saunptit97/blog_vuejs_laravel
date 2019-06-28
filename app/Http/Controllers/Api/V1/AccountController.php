@@ -40,13 +40,19 @@ class AccountController extends Controller
         $validator = $request->validate([
             'email' => 'required|max:255|email|unique:account',
             'password' => 'required|min:8|max:255|regex:/^(?=.*[a-zA-Z])(?=.*\d).+$/',
-            'confirm_password' => 'required|same:password'
+            'confirm_password' => 'required|same:password',
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255'
             ]);
+            $account = new Account();
+            $account->email = $request->email;
+            $account->password = Hash::make($request->password);
+            $account->save();
             $user = new User();
             $user->firstname = $request->firstname;
             $user->lastname = $request->lastname;
             $user->address = $request->address;
-            $user->id_account = 1;
+            $user->id_account = $account->id;
             $user->save();
             return response()->json(['success' => true]);
     }

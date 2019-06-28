@@ -977,3 +977,7 @@ RESPONSIVE
          display:none;
     }
 }
+.main-post img{
+    width: 95% !important;
+    height: auto !important;
+}

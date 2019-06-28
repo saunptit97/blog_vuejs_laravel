@@ -7,10 +7,10 @@
 		<div class="row">
 			<div class="col-md-10">
 				<ul class="page-header-breadcrumb">
-					<li><a href="index.html">Home</a></li>
-					<li>JavaScript</li>
+					<li><a href="index.html">Trang chủ</a></li>
+					<li></li>
 				</ul>
-				<h1>JavaScript</h1>
+				<h1></h1>
 			</div>
 		</div>
 	</div>
@@ -78,77 +78,22 @@
 							</a>
 						</div>
 					</div>
-					<!-- ad -->
-					
-					<!-- post -->
+					@foreach($posts as $post)
 					<div class="col-md-12">
 						<div class="post post-row">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
+							<a class="post-img" href="{{route('detail', $post->id)}}"><img src="{{URL('/upload/'. $post->image )}}" style="height: 200px"></a>
 							<div class="post-body">
 								<div class="post-meta">
-									<a class="post-category cat-2" href="#">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
+									<a class="post-category cat-2" href="#">{{$post->name}}</a>
+									<span class="post-date">{{$post->created_at}}</span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+								<h3 class="post-title"><a href="blog-post.html">{{$post->title}}</a></h3>
+								<p>{{$post->description}}</p>
 							</div>
 						</div>
 					</div>
-					<!-- /post -->
-					
-					<!-- post -->
-					<div class="col-md-12">
-						<div class="post post-row">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="#">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Microsoft’s TypeScript Fills A Long-standing Void In JavaScript</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-12">
-						<div class="post post-row">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="#">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Javascript : Prototype vs Class</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-					
-					<!-- post -->
-					<div class="col-md-12">
-						<div class="post post-row">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="#">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-					
-					<div class="col-md-12">
-						<div class="section-row">
-							<button class="primary-button center-block">Load More</button>
-						</div>
-					</div>
+					@endforeach
+			
 				</div>
 			</div>
 			

@@ -8,8 +8,12 @@
                     <li class="menu-title">UI elements</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Post</a>
-                        <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-plus-square-o"></i><a href="{{URL('admints/post/create')}}">New Post</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{URL('admints/post')}}">All Post</a></li>
+                        <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-plus-square-o"></i>
+                            <router-link to="/admints/posts/create">New Post</router-link>
+                        </li>
+                            <li><i class="fa fa-table"></i>
+                                <router-link to="/admints/posts">All Posts</router-link>
+                            </li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">

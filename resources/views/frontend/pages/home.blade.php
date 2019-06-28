@@ -1,5 +1,5 @@
 @extends('frontend.index')
-@section('title', 'Home')
+@section('title', 'Lập trình | Tech Talk')
 @section('content')
 
 

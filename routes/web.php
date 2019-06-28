@@ -13,9 +13,9 @@
 
 
 Route::prefix('')->group(function(){
-	Route::get('/', function () {
-	    return view('frontend.pages.home');
-	});
+	Route::get('/', 'HomeController@index')->name('default');
+	Route::get('/category/{slug}', 'CategoryController@slug');
+	Route::get('/post/{id}', 'PostController@detail')->name('detail');
 	Route::get('/contact', function(){
 		return view('frontend.pages.contact');
 	});
