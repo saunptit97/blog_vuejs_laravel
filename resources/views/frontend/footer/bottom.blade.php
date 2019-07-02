@@ -22,23 +22,20 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="footer-widget">
-									<h3 class="footer-title">About Us</h3>
+									<h3 class="footer-title">Thông tin</h3>
 									<ul class="footer-links">
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="#">Join Us</a></li>
-										<li><a href="contact.html">Contacts</a></li>
+										<li><a href="{{ URL('/about')}} ">Về chúng tôi</a></li>
+										<li><a href="{{ URL('/contact') }}">Liên hệ</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="footer-widget">
-									<h3 class="footer-title">Catagories</h3>
+									<h3 class="footer-title">Danh mục</h3>
 									<ul class="footer-links">
-										<li><a href="category.html">Web Design</a></li>
-										<li><a href="category.html">JavaScript</a></li>
-										<li><a href="category.html">Css</a></li>
-										<li><a href="category.html">Jquery</a></li>
-									</ul>
+										@foreach($categories as $category)
+										<li><a href="{{route('category', $category->slug)}}">{{$category->name}}</a></li>
+										@endforeach
 								</div>
 							</div>
 						</div>

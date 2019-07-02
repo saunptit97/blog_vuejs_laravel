@@ -1,5 +1,5 @@
 @extends('frontend.index')
-@section('title', $category->name)
+@section('title', 'Xem nhiều')
 @section('content')
 		
 <div class="page-header">
@@ -8,9 +8,9 @@
 			<div class="col-md-10">
 				<ul class="page-header-breadcrumb">
 					<li><a href="{{URL('/')}}">Trang chủ</a></li>
-					<li>{{$category->name}}</li>
+					<li>Xem nhiều</li>
 				</ul>
-				<h1>{{$category->name}}</h1>
+				<h1>Xem nhiều</h1>
 			</div>
 		</div>
 	</div>
